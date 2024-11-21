@@ -1,4 +1,5 @@
 using System.Reflection;
+using EcoHome.EnergyInsights.Infrastructure.IoC; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddSwaggerGen(options =>
 
     options.IncludeXmlComments(xmlPath);
 });
+
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

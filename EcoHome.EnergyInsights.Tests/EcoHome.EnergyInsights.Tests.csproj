@@ -11,9 +11,17 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EcoHome.EnergyInsights.API\EcoHome.EnergyInsights.API.csproj" />
+    <ProjectReference Include="..\EcoHome.EnergyInsights.Application\EcoHome.EnergyInsights.Application.csproj" />
+    <ProjectReference Include="..\EcoHome.EnergyInsights.Infrastructure.Data\EcoHome.EnergyInsights.Infrastructure.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
