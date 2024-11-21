@@ -2,8 +2,8 @@
 {
     public class AnomalyDetectionResponse
     {
-        public bool IsAnomaly { get; set; }
-        public double PValue { get; set; }
-        public double Score { get; set; }
+        public bool IsAnomaly { get; set; } 
+        public double PValue { get; set; }  
+        public double Score { get; set; }  
     }
 }

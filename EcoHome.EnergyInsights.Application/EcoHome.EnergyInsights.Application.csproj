@@ -17,7 +17,7 @@
 
 	<ItemGroup>
 	  <None Update="ML\Data\AnomalyDetectionData.csv">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
 

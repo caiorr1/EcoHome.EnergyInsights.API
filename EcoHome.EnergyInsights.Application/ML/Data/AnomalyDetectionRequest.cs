@@ -2,7 +2,7 @@
 {
     public class AnomalyDetectionRequest
     {
-        public int HoraDoDia { get; set; }
-        public float Consumo { get; set; }
+        public float HourOfDay { get; set; }
+        public float Consumption { get; set; } 
     }
 }
