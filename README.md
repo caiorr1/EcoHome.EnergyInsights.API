@@ -187,12 +187,4 @@ Os testes garantem a qualidade e a confiabilidade do projeto, cobrindo:
 
 ---
 
-## Contato
-
-- **Autor**: Seu Nome  
-- **Email**: seuemail@exemplo.com  
-- **LinkedIn**: [Seu LinkedIn](https://www.linkedin.com/in/seulinkedin/)
-
----
-
 Esperamos que esta API ajude a promover eficiência energética e sustentabilidade!
