@@ -8,7 +8,6 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data
         public EnergyInsightsContext(DbContextOptions<EnergyInsightsContext> options)
             : base(options) { }
 
-        // DbSet para as entidades utilizadas no projeto
         public DbSet<InsightEntity> Insights { get; set; }
         public DbSet<UserConsumptionGoalEntity> UserConsumptionGoals { get; set; }
         public DbSet<NotificationLogEntity> NotificationLogs { get; set; }
@@ -19,7 +18,6 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configuração da entidade EnergySavingTipEntity
             modelBuilder.Entity<EnergySavingTipEntity>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -28,10 +26,9 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data
                 entity.Property(e => e.CreatedAt).IsRequired();
                 entity.Property(e => e.IsActive)
                       .IsRequired()
-                      .HasConversion<int>(); // Mapeia BOOLEAN para NUMBER(1)
+                      .HasConversion<int>();
             });
 
-            // Configuração da entidade InsightEntity
             modelBuilder.Entity<InsightEntity>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -41,10 +38,9 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data
                 entity.Property(e => e.ExternalUserId).IsRequired().HasMaxLength(50);
                 entity.Property(e => e.IsRead)
                       .IsRequired()
-                      .HasConversion<int>(); // Mapeia BOOLEAN para NUMBER(1)
+                      .HasConversion<int>();
             });
 
-            // Configuração da entidade UserConsumptionGoalEntity
             modelBuilder.Entity<UserConsumptionGoalEntity>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -54,7 +50,6 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data
                 entity.Property(e => e.ExternalUserId).IsRequired().HasMaxLength(50);
             });
 
-            // Configuração da entidade NotificationLogEntity
             modelBuilder.Entity<NotificationLogEntity>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -64,10 +59,9 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data
                 entity.Property(e => e.ExternalUserId).IsRequired().HasMaxLength(50);
                 entity.Property(e => e.IsRead)
                       .IsRequired()
-                      .HasConversion<int>(); // Mapeia BOOLEAN para NUMBER(1)
+                      .HasConversion<int>();
             });
 
-            // Configuração da entidade ReportEntity
             modelBuilder.Entity<ReportEntity>(entity =>
             {
                 entity.HasKey(e => e.Id);

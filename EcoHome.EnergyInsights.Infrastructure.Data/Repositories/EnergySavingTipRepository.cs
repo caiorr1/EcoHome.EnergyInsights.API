@@ -1,11 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EcoHome.EnergyInsights.Domain.Entities;
+﻿using EcoHome.EnergyInsights.Domain.Entities;
 using EcoHome.EnergyInsights.Domain.Interfaces;
+using EcoHome.EnergyInsights.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace EcoHome.EnergyInsights.Infrastructure.Data.Repositories
+namespace EcoHome.EnergyInsights.Infrastructure.Repositories
 {
     public class EnergySavingTipRepository : IEnergySavingTipRepository
     {
@@ -16,36 +14,34 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data.Repositories
             _context = context;
         }
 
+        public async Task<IEnumerable<EnergySavingTipEntity>> GetAllAsync()
+        {
+            return await _context.EnergySavingTips.ToListAsync();
+        }
+
         public async Task<EnergySavingTipEntity> GetByIdAsync(int id)
         {
             return await _context.EnergySavingTips.FindAsync(id);
         }
 
-        public async Task<IEnumerable<EnergySavingTipEntity>> GetAllActiveAsync()
+        public async Task AddAsync(EnergySavingTipEntity entity)
         {
-            return await _context.EnergySavingTips
-                .Where(t => t.IsActive)
-                .ToListAsync();
-        }
-
-        public async Task AddAsync(EnergySavingTipEntity tip)
-        {
-            await _context.EnergySavingTips.AddAsync(tip);
+            await _context.EnergySavingTips.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(EnergySavingTipEntity tip)
+        public async Task UpdateAsync(EnergySavingTipEntity entity)
         {
-            _context.EnergySavingTips.Update(tip);
+            _context.EnergySavingTips.Update(entity);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var tip = await GetByIdAsync(id);
-            if (tip != null)
+            var entity = await _context.EnergySavingTips.FindAsync(id);
+            if (entity != null)
             {
-                _context.EnergySavingTips.Remove(tip);
+                _context.EnergySavingTips.Remove(entity);
                 await _context.SaveChangesAsync();
             }
         }

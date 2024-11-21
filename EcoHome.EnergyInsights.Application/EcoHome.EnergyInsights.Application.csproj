@@ -7,9 +7,18 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="ML\Data\" />
-		<Folder Include="ML\Model\" />
-		<Folder Include="Services\" />
+	  <PackageReference Include="Microsoft.ML.FastTree" Version="4.0.0" />
+	  <PackageReference Include="Microsoft.ML.TimeSeries" Version="4.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\EcoHome.EnergyInsights.Domain\EcoHome.EnergyInsights.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="ML\Data\AnomalyDetectionData.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

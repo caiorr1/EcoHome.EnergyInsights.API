@@ -1,11 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EcoHome.EnergyInsights.Domain.Entities;
+﻿using EcoHome.EnergyInsights.Domain.Entities;
 using EcoHome.EnergyInsights.Domain.Interfaces;
+using EcoHome.EnergyInsights.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace EcoHome.EnergyInsights.Infrastructure.Data.Repositories
+namespace EcoHome.EnergyInsights.Infrastructure.Repositories
 {
     public class NotificationLogRepository : INotificationLogRepository
     {
@@ -16,9 +14,9 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data.Repositories
             _context = context;
         }
 
-        public async Task<NotificationLogEntity> GetByIdAsync(int id)
+        public async Task<IEnumerable<NotificationLogEntity>> GetAllAsync()
         {
-            return await _context.NotificationLogs.FindAsync(id);
+            return await _context.NotificationLogs.ToListAsync();
         }
 
         public async Task<IEnumerable<NotificationLogEntity>> GetByUserAsync(string externalUserId)
@@ -28,29 +26,29 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data.Repositories
                 .ToListAsync();
         }
 
-        public async Task AddAsync(NotificationLogEntity notification)
+        public async Task AddAsync(NotificationLogEntity entity)
         {
-            await _context.NotificationLogs.AddAsync(notification);
+            await _context.NotificationLogs.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
 
         public async Task MarkAsReadAsync(int id)
         {
-            var notification = await GetByIdAsync(id);
-            if (notification != null)
+            var entity = await _context.NotificationLogs.FindAsync(id);
+            if (entity != null)
             {
-                notification.IsRead = true;
-                _context.NotificationLogs.Update(notification);
+                entity.IsRead = true;
+                _context.NotificationLogs.Update(entity);
                 await _context.SaveChangesAsync();
             }
         }
 
         public async Task DeleteAsync(int id)
         {
-            var notification = await GetByIdAsync(id);
-            if (notification != null)
+            var entity = await _context.NotificationLogs.FindAsync(id);
+            if (entity != null)
             {
-                _context.NotificationLogs.Remove(notification);
+                _context.NotificationLogs.Remove(entity);
                 await _context.SaveChangesAsync();
             }
         }

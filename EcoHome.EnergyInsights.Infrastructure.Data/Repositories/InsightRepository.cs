@@ -1,11 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EcoHome.EnergyInsights.Domain.Entities;
+﻿using EcoHome.EnergyInsights.Domain.Entities;
 using EcoHome.EnergyInsights.Domain.Interfaces;
+using EcoHome.EnergyInsights.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace EcoHome.EnergyInsights.Infrastructure.Data.Repositories
+namespace EcoHome.EnergyInsights.Infrastructure.Repositories
 {
     public class InsightRepository : IInsightRepository
     {
@@ -14,6 +12,11 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data.Repositories
         public InsightRepository(EnergyInsightsContext context)
         {
             _context = context;
+        }
+
+        public async Task<IEnumerable<InsightEntity>> GetAllAsync()
+        {
+            return await _context.Insights.ToListAsync();
         }
 
         public async Task<InsightEntity> GetByIdAsync(int id)
@@ -28,24 +31,24 @@ namespace EcoHome.EnergyInsights.Infrastructure.Data.Repositories
                 .ToListAsync();
         }
 
-        public async Task AddAsync(InsightEntity insight)
+        public async Task AddAsync(InsightEntity entity)
         {
-            await _context.Insights.AddAsync(insight);
+            await _context.Insights.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(InsightEntity insight)
+        public async Task UpdateAsync(InsightEntity entity)
         {
-            _context.Insights.Update(insight);
+            _context.Insights.Update(entity);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var insight = await GetByIdAsync(id);
-            if (insight != null)
+            var entity = await _context.Insights.FindAsync(id);
+            if (entity != null)
             {
-                _context.Insights.Remove(insight);
+                _context.Insights.Remove(entity);
                 await _context.SaveChangesAsync();
             }
         }

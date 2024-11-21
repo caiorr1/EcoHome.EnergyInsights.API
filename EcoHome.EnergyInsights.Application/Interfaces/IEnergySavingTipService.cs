@@ -1,13 +1,13 @@
 ﻿using EcoHome.EnergyInsights.Domain.Entities;
 
-namespace EcoHome.EnergyInsights.Domain.Interfaces
+namespace EcoHome.EnergyInsights.Application.Services
 {
-    public interface IEnergySavingTipRepository
+    public interface IEnergySavingTipService
     {
         Task<IEnumerable<EnergySavingTipEntity>> GetAllAsync();
         Task<EnergySavingTipEntity> GetByIdAsync(int id);
-        Task AddAsync(EnergySavingTipEntity entity);
-        Task UpdateAsync(EnergySavingTipEntity entity);
+        Task AddAsync(EnergySavingTipEntity tip);
+        Task UpdateAsync(EnergySavingTipEntity tip);
         Task DeleteAsync(int id);
     }
 }

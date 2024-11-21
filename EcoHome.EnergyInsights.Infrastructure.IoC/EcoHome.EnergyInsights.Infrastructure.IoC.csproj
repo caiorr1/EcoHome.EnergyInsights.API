@@ -7,6 +7,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\EcoHome.EnergyInsights.Application\EcoHome.EnergyInsights.Application.csproj" />
 		<ProjectReference Include="..\EcoHome.EnergyInsights.Infrastructure.Data\EcoHome.EnergyInsights.Infrastructure.Data.csproj" />
 	</ItemGroup>
 

@@ -1,14 +1,14 @@
 ﻿using EcoHome.EnergyInsights.Domain.Entities;
 
-namespace EcoHome.EnergyInsights.Domain.Interfaces
+namespace EcoHome.EnergyInsights.Application.Services
 {
-    public interface IInsightRepository
+    public interface IInsightService
     {
         Task<IEnumerable<InsightEntity>> GetAllAsync();
         Task<InsightEntity> GetByIdAsync(int id);
         Task<IEnumerable<InsightEntity>> GetByUserAsync(string externalUserId);
-        Task AddAsync(InsightEntity entity);
-        Task UpdateAsync(InsightEntity entity);
+        Task AddAsync(InsightEntity insight);
+        Task UpdateAsync(InsightEntity insight);
         Task DeleteAsync(int id);
     }
 }
