@@ -1,0 +1,6 @@
+@EcoHome.EnergyInsights.API_HostAddress = http://localhost:5066
+
+GET {{EcoHome.EnergyInsights.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

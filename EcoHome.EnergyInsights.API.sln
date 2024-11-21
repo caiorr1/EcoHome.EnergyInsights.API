@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoHome.EnergyInsights.API", "EcoHome.EnergyInsights.API\EcoHome.EnergyInsights.API.csproj", "{8154C4F7-BDE9-490F-A07C-CF2D03E6A4BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{7D78A87A-1FAF-4E4D-B081-F326FB66285E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{36F09938-8C01-429D-B626-E35D9C1BF11E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{CEF24B18-D7CF-4C7D-A68F-2E66835A3252}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{07266423-50E4-4E41-B8AC-3EA055F2EF8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Tests", "4 - Tests", "{252EB723-489D-4977-B962-144C2DEE6194}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoHome.EnergyInsights.Application", "EcoHome.EnergyInsights.Application\EcoHome.EnergyInsights.Application.csproj", "{86D60122-9A96-4CF6-BD17-4C08E56CA6DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoHome.EnergyInsights.Domain", "EcoHome.EnergyInsights.Domain\EcoHome.EnergyInsights.Domain.csproj", "{37DAE983-FB8C-40F4-8197-0DCFDC588CFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoHome.EnergyInsights.Infrastructure.Data", "EcoHome.EnergyInsights.Infrastructure.Data\EcoHome.EnergyInsights.Infrastructure.Data.csproj", "{D7909A91-A600-4C48-BBCD-D46900B3D511}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{324EA6ED-4471-4799-8DA8-9F3541BC3ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoHome.EnergyInsights.Infrastructure.IoC", "EcoHome.EnergyInsights.Infrastructure.IoC\EcoHome.EnergyInsights.Infrastructure.IoC.csproj", "{D607B2AD-D22D-465A-A4EF-5928DCF9F182}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ioc", "Ioc", "{C0CADDF4-CC91-4C71-8CF4-32C64EEF20EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoHome.EnergyInsights.Tests", "EcoHome.EnergyInsights.Tests\EcoHome.EnergyInsights.Tests.csproj", "{100FB627-01F3-41F7-B8BA-89BF0ABB6D8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8154C4F7-BDE9-490F-A07C-CF2D03E6A4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8154C4F7-BDE9-490F-A07C-CF2D03E6A4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8154C4F7-BDE9-490F-A07C-CF2D03E6A4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8154C4F7-BDE9-490F-A07C-CF2D03E6A4BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D60122-9A96-4CF6-BD17-4C08E56CA6DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D60122-9A96-4CF6-BD17-4C08E56CA6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D60122-9A96-4CF6-BD17-4C08E56CA6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D60122-9A96-4CF6-BD17-4C08E56CA6DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37DAE983-FB8C-40F4-8197-0DCFDC588CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37DAE983-FB8C-40F4-8197-0DCFDC588CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37DAE983-FB8C-40F4-8197-0DCFDC588CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37DAE983-FB8C-40F4-8197-0DCFDC588CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7909A91-A600-4C48-BBCD-D46900B3D511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7909A91-A600-4C48-BBCD-D46900B3D511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7909A91-A600-4C48-BBCD-D46900B3D511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7909A91-A600-4C48-BBCD-D46900B3D511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D607B2AD-D22D-465A-A4EF-5928DCF9F182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D607B2AD-D22D-465A-A4EF-5928DCF9F182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D607B2AD-D22D-465A-A4EF-5928DCF9F182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D607B2AD-D22D-465A-A4EF-5928DCF9F182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{100FB627-01F3-41F7-B8BA-89BF0ABB6D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100FB627-01F3-41F7-B8BA-89BF0ABB6D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100FB627-01F3-41F7-B8BA-89BF0ABB6D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100FB627-01F3-41F7-B8BA-89BF0ABB6D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8154C4F7-BDE9-490F-A07C-CF2D03E6A4BC} = {7D78A87A-1FAF-4E4D-B081-F326FB66285E}
+		{86D60122-9A96-4CF6-BD17-4C08E56CA6DA} = {36F09938-8C01-429D-B626-E35D9C1BF11E}
+		{37DAE983-FB8C-40F4-8197-0DCFDC588CFE} = {CEF24B18-D7CF-4C7D-A68F-2E66835A3252}
+		{D7909A91-A600-4C48-BBCD-D46900B3D511} = {324EA6ED-4471-4799-8DA8-9F3541BC3ECE}
+		{324EA6ED-4471-4799-8DA8-9F3541BC3ECE} = {07266423-50E4-4E41-B8AC-3EA055F2EF8B}
+		{D607B2AD-D22D-465A-A4EF-5928DCF9F182} = {C0CADDF4-CC91-4C71-8CF4-32C64EEF20EA}
+		{C0CADDF4-CC91-4C71-8CF4-32C64EEF20EA} = {07266423-50E4-4E41-B8AC-3EA055F2EF8B}
+		{100FB627-01F3-41F7-B8BA-89BF0ABB6D8F} = {252EB723-489D-4977-B962-144C2DEE6194}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93D1D84A-00B6-401A-9DF2-4AB62B481C8B}
+	EndGlobalSection
+EndGlobal
